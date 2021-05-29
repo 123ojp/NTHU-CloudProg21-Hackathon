@@ -84,7 +84,8 @@ import {
               var login_info = {
                   email : email,
                   islogin : true,
-                  username : username
+                  username : username,
+                  id : response.body.data.ID
               }
               this.actionSetLoginInfo(login_info)
             } else {

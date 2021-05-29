@@ -6,6 +6,7 @@ import store from '../store';
 import Home from '../components/pages/Home'
 import Register from '../components/pages/Register'
 import Login from '../components/pages/Login'
+import Profile from '../components/pages/Profile'
 import Items from '../components/pages/Item/Items'
 import ItemEdit from '../components/pages/Item/ItemEdit'
 import ItemDel from '../components/pages/Item/ItemDel'
@@ -15,6 +16,8 @@ import WarehouseAdd from '../components/pages/Warehouse/WarehouseAdd'
 import WarehouseDel from '../components/pages/Warehouse/WarehouseDel'
 import WarehouseEdit from '../components/pages/Warehouse/WarehouseEdit'
 import Subscribe from '../components/pages/Subscribe/Subscribe'
+import SubscribeAdd from '../components/pages/Subscribe/SubscribeAdd'
+import SubscribeDel from '../components/pages/Subscribe/SubscribeDel'
 
 Vue.use(Router)
 
@@ -33,6 +36,11 @@ let routes = [
     path: '/login',
     component: Login,
     meta: { requiresAuth: false },
+  },
+  {
+    path: '/profile',
+    component: Profile,
+    meta: { requiresAuth: true },
   },
   {
     path: '/item/',
@@ -77,6 +85,16 @@ let routes = [
   {
     path: '/subscribe/',
     component: Subscribe,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/subscribe/add',
+    component: SubscribeAdd,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/subscribe/:id/del',
+    component: SubscribeDel,
     meta: { requiresAuth: true },
   },
 ];

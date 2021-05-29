@@ -36,9 +36,9 @@ import { mapGetters, mapActions } from 'vuex'
     data() {
       return {
         data :{
-        username:'',
-          email: '',
-          password: '',
+        username:'f',
+          email: 'fuck@fuck1.com',
+          password: 'f',
         }
      }
     },
@@ -73,7 +73,8 @@ import { mapGetters, mapActions } from 'vuex'
               var login_info = {
                   email : email,
                   islogin : true,
-                  username : response.body.data.username
+                  username : response.body.data.username,
+                  id : response.body.data.ID
               }
               this.actionSetLoginInfo(login_info)
             } else {

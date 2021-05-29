@@ -34,7 +34,14 @@
         >
           物品列表
         </router-link>
-        
+        <router-link
+          to="/warehouse/"
+          class="nav-item nav-link"
+          active-class="active"
+          exact
+        >
+          倉庫列表
+        </router-link>
       </ul>
       <ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
         <hr class="d-sm-flex d-md-flex d-lg-none">

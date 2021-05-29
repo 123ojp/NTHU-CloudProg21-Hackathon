@@ -26,6 +26,14 @@
         >
           Home
         </router-link>
+        <router-link
+          to="/item/"
+          class="nav-item nav-link"
+          active-class="active"
+          exact
+        >
+          物品列表
+        </router-link>
         
       </ul>
       <ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">

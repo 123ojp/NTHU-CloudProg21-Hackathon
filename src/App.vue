@@ -16,6 +16,8 @@
     import 'bootstrap/dist/js/bootstrap.js'
     import 'sweetalert2/dist/sweetalert2.min.css';
     import '@/assets/css/custom.css';
+   
+
     export default {
         components: {
             navbar: navbar,

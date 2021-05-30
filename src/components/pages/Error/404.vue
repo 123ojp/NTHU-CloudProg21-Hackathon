@@ -25,18 +25,6 @@
 <style type="text/css" media="screen">
   @import url('https://fonts.googleapis.com/css?family=Audiowide');
 
-  body {
-    background-color: #E3F2FD;
-    color: #138FF2;
-    font-family: 'Source Code Pro', monospace;
-    font-size: 12px;
-    /*  background-image: -webkit-gradient(radial,
-                            50% 48%, 1,
-                            50% 48%, 500,
-                            from(rgba(255, 255, 255, 0.3)),
-                            to(rgba(255, 255, 255, 0)));*/
-    background-repeat: no-repeat;
-  }
 
   #container {
     width: 100%;

@@ -54,7 +54,11 @@
   export default {
     data() {
       return {
-        datas: ""
+        datas: 
+          [
+            {itemname:"loading..."}
+          ]
+        
       }
     },
     methods: {

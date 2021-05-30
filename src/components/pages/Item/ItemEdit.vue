@@ -32,13 +32,27 @@
           </div>
            <div class="form-group">
             <label for="name-input">
-              倉庫ID
+              位於倉庫
             </label>
             <div class="bd-example">
             <select aria-label="Default select example"  class="form-select form-select-lg mb-3" v-model="data.warehouseId">
                 <option v-for="whouse in warehouse" v-bind:value="whouse.ID">{{whouse.Name}}</option>
             </select>
             </div>
+                       <div class="form-group">
+            <label for="name-input">
+              最大庫存量
+            </label>
+            <input v-model="data.amount_max" class="form-control input-filled-valid" type="text" 
+              id="amount-input" />
+          </div>
+                    <div class="form-group">
+            <label for="name-input">
+              庫存不足警告數量
+            </label>
+            <input v-model="data.amount_min" class="form-control input-filled-valid" type="text" 
+              id="amount-input" />
+          </div>
           </div>
           <div class="row pt-3">
             <div class="col-md-12">

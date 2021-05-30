@@ -3,17 +3,16 @@
     <div class="jumbotron">
       <div class="container">
         <h1>物品列表</h1>
-        <router-link :to="{path: '/item/add' }" class="btn btn-info float-right" active-class="active"
-                  exac>
-                  <b-icon icon="plus"></b-icon>
-                </router-link>
+        <router-link :to="{path: '/item/add' }" class="btn btn-info float-right" active-class="active" exac>
+          <b-icon icon="plus"></b-icon>
+        </router-link>
       </div>
     </div>
     <div class="container">
       <div class="mt2">
         <div class="card-header card  inline">
           <p class=""> 物品列表</p>
-          
+
         </div>
         <table class="table card" border="1">
           <thead class="thead-light">
@@ -22,8 +21,11 @@
               <th class="col-1"> ID</th>
               <th class="col-2"> 物品名稱</th>
               <th class="col-3"> 所在倉庫位子</th>
-              <th class="col-2"> 剩餘數量</th>
-              <th class="col-4"> 功能 </th>
+              <th class="col-1"> 剩餘數量</th>
+              <th class="col-1"> 最大庫存量</th>
+              <th class="col-1"> 需提醒值</th>
+
+              <th class="col-3"> 功能 </th>
 
             </tr>
           </thead>
@@ -33,26 +35,28 @@
               <td class="col-1"> {{data.ID}} </td>
               <td class="col-2"> {{data.Name}}</td>
               <td class="col-3">{{data.warehouseName}} </td>
-              <td class="col-2"> {{data.amount}} </td>
-              <td class="col-4">
-              <div class="btn-group">
-                <router-link :to="{path: '/item/'+ data.ID + '/edit'}" class="btn  btn-success" 
-                  exac>
+              <td class="col-1"> {{data.amount}} </td>
+              <td class="col-1"> {{data.amount_max}} </td>
+              <td class="col-1"> {{data.amount_min}} </td>
 
-                  <b-icon icon="pencil-square"></b-icon>
-                </router-link>
-                <router-link :to="{path: '/item/'+ data.ID +'/del' }" class="btn btn-danger" active-class="active"
-                  exac>
-               <b-icon icon="trash"></b-icon>
-                </router-link>
+              <td class="col-3">
+                <div class="btn-group">
+                  <router-link :to="{path: '/item/'+ data.ID + '/edit'}" class="btn  btn-success" exac>
 
-                <router-link :to="{path: '/item/'+ data.ID +'/qrcode' }" class="btn btn-info" active-class="active"
-                  exac>
-                  <i class="fa fa-qrcode" aria-hidden="true"></i>
-                </router-link>
+                    <b-icon icon="pencil-square"></b-icon>
+                  </router-link>
+                  <router-link :to="{path: '/item/'+ data.ID +'/del' }" class="btn btn-danger" active-class="active"
+                    exac>
+                    <b-icon icon="trash"></b-icon>
+                  </router-link>
+
+                  <router-link :to="{path: '/qrcode/create/item/'+ data.ID }" class="btn btn-info" active-class="active"
+                    exac>
+                    <i class="fa fa-qrcode" aria-hidden="true"></i>
+                  </router-link>
                 </div>
               </td>
-              
+
             </tr>
           </tbody>
         </table>
@@ -64,7 +68,9 @@
   export default {
     data() {
       return {
-        datas: "",
+        datas: [{
+          Name: "loading..."
+        }],
         warehouse: ""
       }
     },

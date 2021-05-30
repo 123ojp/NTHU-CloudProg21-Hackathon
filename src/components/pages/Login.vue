@@ -36,7 +36,6 @@ import { mapGetters, mapActions } from 'vuex'
     data() {
       return {
         data :{
-        username:'f',
           email: 'fuck@fuck1.com',
           password: 'f',
         }

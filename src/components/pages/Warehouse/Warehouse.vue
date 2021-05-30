@@ -59,7 +59,11 @@
   export default {
     data() {
       return {
-        datas: ""
+        datas: [
+            {
+                Name:"loading..."
+            }
+        ]
         }
     },
     methods: {

@@ -18,87 +18,155 @@ import WarehouseEdit from '../components/pages/Warehouse/WarehouseEdit'
 import Subscribe from '../components/pages/Subscribe/Subscribe'
 import SubscribeAdd from '../components/pages/Subscribe/SubscribeAdd'
 import SubscribeDel from '../components/pages/Subscribe/SubscribeDel'
+import CreateQRItem from '../components/pages/QRcode/CreateQRItem'
+import QREditItem from '../components/pages/QRcode/QREditItem'
+import GenerateQRcode from '../components/pages/QRcode/GenerateQRcode'
+import Error404 from '../components/pages/Error/404'
 
 Vue.use(Router)
 
-let routes = [
-  {
-      path: '/',
-      component: Home,
-      meta: { requiresAuth: false },
+let routes = [{
+    path: '/',
+    component: Home,
+    meta: {
+      requiresAuth: false
+    },
   },
   {
     path: '/register',
     component: Register,
-    meta: { requiresAuth: false },
+    meta: {
+      requiresAuth: false
+    },
   },
   {
     path: '/login',
     component: Login,
-    meta: { requiresAuth: false },
+    meta: {
+      requiresAuth: false
+    },
   },
   {
     path: '/profile',
     component: Profile,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/item/',
     component: Items,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/item/add',
     component: ItemAdd,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/item/:id/edit',
     component: ItemEdit,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/item/:id/del',
     component: ItemDel,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/warehouse/',
     component: Warehouse,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/warehouse/add',
     component: WarehouseAdd,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/warehouse/:id/del',
     component: WarehouseDel,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/warehouse/:id/edit',
     component: WarehouseEdit,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/subscribe/',
     component: Subscribe,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/subscribe/add',
     component: SubscribeAdd,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
   },
   {
     path: '/subscribe/:id/del',
     component: SubscribeDel,
-    meta: { requiresAuth: true },
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
+    path: '/qrcode/create',
+    component: CreateQRItem,
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
+    path: '/qrcode/create/item/:id',
+    component: CreateQRItem,
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
+    path: '/qrcode/item/:id/:num/:command',
+    component: QREditItem,
+    meta: {
+      requiresAuth: false
+    },
+  },
+  {
+    path: '/qrcode/create/:object/:id/:num/:command',
+    component: GenerateQRcode,
+    meta: {
+      requiresAuth: true
+    },
+  },
+  {
+    path: '/*',
+    component: Error404,
+    meta: {
+      requiresAuth: false
+    },
   },
 ];
-var router = new Router ({
+var router = new Router({
   //mode: 'history',
   routes
 });
@@ -106,13 +174,18 @@ router.beforeEach((to, from, next) => {
   // 如果 router 轉跳的頁面需要驗證 requiresAuth: true
   console.log('to=', to.fullPath, '| from=', from.fullPath);
   if (to.matched.some(record => {
-    console.log(record.name, record.meta.requiresAuth);
-    return record.meta.requiresAuth;
-  })) {
+      console.log(record.name, record.meta.requiresAuth);
+      return record.meta.requiresAuth;
+    })) {
     // 如果沒有 islogin
-    if ( !store.state.login_info.islogin) {
+    if (!store.state.login_info.islogin) {
       // 轉跳到 login page
-      next({ path: '/login' });
+      Vue.prototype.$swal("未登入!", "請先登入才能查看此頁面!", "error").then((value) => {
+        next({
+          path: '/login'
+        })
+      });
+
     } else {
       next(); // 往下繼續執行
     }

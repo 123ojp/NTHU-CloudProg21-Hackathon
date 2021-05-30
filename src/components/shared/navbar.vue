@@ -5,15 +5,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <a class="navbar-brand" href="#">
+        <router-link to="/" class="navbar-brand" active-class="active" exact>
       <img class="img-responsive" height="25" src="@/assets/logo.png" alt="logo" /> 儲倉系統
-    </a>
+        </router-link>
 
     <div class="collapse navbar-collapse" id="appnav">
       <ul class="nav navbar-nav  mr-auto">
-        <router-link to="/" class="nav-item nav-link" active-class="active" exact>
-          Home
-        </router-link>
         <router-link to="/item/" class="nav-item nav-link" active-class="active" exact>
           物品列表
         </router-link>
@@ -23,6 +20,10 @@
         <router-link to="/subscribe/" class="nav-item nav-link" active-class="active" exact>
           訂閱列表
         </router-link>
+        <router-link to="/qrcode/create" class="nav-item nav-link" active-class="active" exact>
+          建立 qrcode
+        </router-link>
+        
       </ul>
       <ul class="navbar-nav ml-md-auto d-block d-sm-flex d-md-flex">
         <hr class="d-sm-flex d-md-flex d-lg-none">

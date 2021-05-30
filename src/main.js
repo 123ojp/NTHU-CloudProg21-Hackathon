@@ -12,6 +12,7 @@ import VueSwal from 'vue-swal'
 import Vuex from 'vuex'
 import store from './store'
 
+
 // 告訴 Vue 使用 vuex
 Vue.use(Vuex)
 
@@ -41,3 +42,4 @@ new Vue({
   render: h => h( App ),
   template: '<App/>'
 })
+

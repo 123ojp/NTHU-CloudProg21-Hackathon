@@ -88,7 +88,7 @@
           "method": "add",
           "tableName": "subscribe",
           "Items": {
-            "itemid": this.ID,
+            "itemid": this.data.ID,
             "subscribid": this.login_id,
           }
 

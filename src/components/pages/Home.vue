@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <p>Welcome!</p>
-        <p>Enter your username first ↓</p>
-        <p>Username:
-            <span><input type="text"></span>
-        </p>
+  <div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Dashboard</h1>
+      </div>
     </div>
+  </div>
 </template>

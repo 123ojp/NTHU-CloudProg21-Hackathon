@@ -2,7 +2,7 @@
   <div>
     <div class="jumbotron">
       <div class="container">
-        <h1>物品建立</h1>
+        <h1>建立新的訂閱</h1>
       </div>
     </div>
     <div class="container">

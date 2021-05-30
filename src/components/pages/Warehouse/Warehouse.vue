@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>倉庫列表</h1>
-        <router-link :to="{path: '/warehouse/add' }" class="btn btn-info float-right" active-class="active"
+        <router-link :to="{path: '/warehouse/add' }" class="btn btn-info btn-circle float-right" active-class="active"
                   exac>
                   <b-icon icon="plus"></b-icon>
                 </router-link>

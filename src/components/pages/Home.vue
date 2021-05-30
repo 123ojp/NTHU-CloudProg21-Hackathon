@@ -14,7 +14,7 @@
                 <div class="card-header card ">
                   <p class="dashborad_card text-truncate"> {{item.Name}}庫存量</p>
                 </div>
-                <div class=" card">
+                <div class=" card" style="padding: 0.5rem;">
                   <div :class="item.persent_css" class="c100 center green">
                     <span>{{item.persent}}%</span>
                     <div class="slice">

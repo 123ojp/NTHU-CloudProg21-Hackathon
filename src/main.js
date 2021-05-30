@@ -32,7 +32,7 @@ Vue.prototype.$REG_API = Vue.prototype.$HOST1  + "test/account/register"
 
 
 Vue.prototype.$WHOUSE_API_LIST = Vue.prototype.$WHOUSE_API + "list-all-warehouse"
-Vue.prototype.$HOST2  = "https://irx89lk9f8.execute-api.us-east-1.amazonaws.com/"
+Vue.prototype.$HOST2  = "https://u14unzm89l.execute-api.us-east-1.amazonaws.com/test/"
 Vue.prototype.$SUB_API = Vue.prototype.$HOST2+"subscribe"
 /* eslint-disable no-new */
 new Vue({

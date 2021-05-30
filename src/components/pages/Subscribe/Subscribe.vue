@@ -3,7 +3,7 @@
     <div class="jumbotron">
       <div class="container">
         <h1>訂閱列表</h1>
-        <router-link :to="{path: '/subscribe/add' }" class="btn btn-info float-right" active-class="active" exac>
+        <router-link :to="{path: '/subscribe/add' }" class="btn btn-info  btn-circle float-right" active-class="active" exac>
           <b-icon icon="plus"></b-icon>
         </router-link>
       </div>
@@ -28,7 +28,7 @@
           <tbody>
             <tr v-for="data in datas" class="d-flex">
               <!-- <td class="col-2" v-for="(section_item, section_key) in data">{{section_item}}</td>-->
-              <td class="col-1"> {{data.id}} </td>
+              <td class="col-1"> {{data.ID}} </td>
               <td class="col-2"> {{data.subscribename}}</td>
               <td class="col-5"> {{data.itemname}} </td>
               <td class="col-4">
@@ -37,7 +37,7 @@
 
                     <b-icon icon="pencil-square"></b-icon>
                   </router-link>-->
-                  <router-link :to="{path: '/subscribe/'+ data.id +'/del' }" class="btn btn-danger"
+                  <router-link :to="{path: '/subscribe/'+ data.ID +'/del' }" class="btn btn-danger"
                     active-class="active" exac>
                     <b-icon icon="trash"></b-icon>
                   </router-link>
@@ -69,8 +69,8 @@
         }
         this.$http.post(this.$SUB_API, payload)
           .then((response) => {
-            console.log(response.body.body)
-            this.datas = JSON.parse(response.body.body)
+            console.log(response.body)
+            this.datas =response.body
 
           })
           .catch((response) => {

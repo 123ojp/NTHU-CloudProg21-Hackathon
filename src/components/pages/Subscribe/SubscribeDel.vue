@@ -35,13 +35,11 @@
           var payload = {
           "method": "delete",
           "tableName": "subscribe",
-          "Items":{
-            "id":this.id,
-          }
+            "ID":this.id,
         }
         this.$http.post(this.$SUB_API, payload)
           .then((response) => {
-            console.log(response.body.body)
+            console.log(response.body)
             this.$swal("成功!", "成功刪除!", "success").then((value) => {
                 this.$router.go(-1)
             });
